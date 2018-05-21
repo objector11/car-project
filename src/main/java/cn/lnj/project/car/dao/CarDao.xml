@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lnj.project.car.dao.CarDao">
+
+    <resultMap id="infoResultMap" type="cn.lnj.project.car.data.Car"></resultMap>
+
+    <insert id="insert" parameterType="cn.lnj.project.car.data.Car">
+        INSERT INTO
+        car
+        VALUES
+        (
+        #{carId},
+        #{carBrand},
+        #{carName},
+        #{carType},
+        #{carImage},
+        #{carPrice},
+        #{carAmount},
+        #{carPeople},
+        #{carGood},
+        #{carInfo},
+        #{rentCount},
+        #{shopId},
+        #{carMilage},
+        #{carTime},
+        #{userId}
+        );
+    </insert>
+
+    <!--获取所有车辆信息-->
+    <select id="all" resultMap="infoResultMap">
+        SELECT * FROM car
+    </select>
+
+    <select id="infoAll" resultMap="infoResultMap">
+        SELECT * FROM car
+        <where>
+            <if test="carBrand != null and carBrand != ''">
+                car_brand LIKE #{carBrand}
+            </if>
+            <if test="carType != null and changeType != ''">
+                AND car_type = #{carType}
+            </if>
+            <if test="startPrice != null and startPrice != ''">
+                AND car_price BETWEEN #{startPrice}
+            </if>
+            <if test="endPrice != null and endPrice != ''">
+                AND #{endPrice}
+            </if>
+            <if test="selfCarId != null and selfCarId != ''">
+                AND car_id != #{selfCarId}
+            </if>
+            <if test="shopId != null and shopId != ''">
+                shop_id =#{shopId}
+            </if>
+            AND car_amount>0
+        </where>
+        <if test="limit != null and limit != ''">
+            limit #{limit}
+        </if>
+    </select>
+
+    <select id="selectById" resultMap="infoResultMap">
+        SELECT * from car WHERE car_id = #{id};
+    </select>
+
+    <select id="selectByUserId" resultMap="infoResultMap">
+        SELECT * FROM car WHERE user_id = #{userId};
+    </select>
+
+    <select id="selectByShopId" resultMap="infoResultMap">
+        SELECT * FROM car WHERE shop_id =#{shopId};
+    </select>
+
+    <delete id="deleteCarById">
+        DELETE FROM  car WHERE car_id = #{carId};
+    </delete>
+
+    <update id="updateCar" parameterType="cn.lnj.project.car.data.Car">
+        UPDATE car
+        SET
+        <if test="carBrand!=null and carBrand !=''">
+            car_brand = #{carBrand},
+        </if>
+        <if test="carName!=null and carName !=''">
+            car_name = #{carName},
+        </if>
+        <if test="carType!=null and carType !=''">
+            car_type = #{carType},
+        </if>
+        <if test="carImage!=null and carImage !=''">
+            car_image = #{carImage},
+        </if>
+        <if test="carPrice!=null and carPrice !=''">
+            car_price = #{carPrice},
+        </if>
+        <if test="carAmount!=null and carAmount !=''">
+            car_amount = #{carAmount},
+        </if>
+        <if test="carPeople!=null and carPeople !=''">
+            car_people = #{carPeople},
+        </if>
+        <if test="carGood!=null and carGood !=''">
+            car_good = #{carGood},
+        </if>
+        <if test="carInfo!=null and carInfo !=''">
+            car_info = #{carInfo},
+        </if>
+        <if test="carMilage!=null and carMilage !=''">
+            car_milage = #{carMilage},
+        </if>
+        <if test="carTime!=null and carTime !=''">
+            car_time = #{carTime}
+        </if>
+        <if test="rentCount!=null and rentCount !=''">
+            rent_count = #{rentCount}
+        </if>
+        WHERE car_id = #{carId}
+    </update>
+
+
+    <select id="auto" resultMap="infoResultMap">
+       SELECT * FROM
+	  car
+      WHERE
+	LOCATE( #{keyword}, car_brand) > 0
+    or LOCATE(#{keyword}, car_name) > 0
+    or LOCATE(#{keyword}, car_type) > 0
+    </select>
+</mapper>

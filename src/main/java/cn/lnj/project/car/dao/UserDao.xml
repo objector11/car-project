@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lnj.project.car.dao.UserDao">
+
+    <resultMap id="infoResultMap" type="cn.lnj.project.car.data.User"></resultMap>
+
+    <insert id="insert" parameterType="cn.lnj.project.car.data.User">
+      INSERT INTO
+        user
+        VALUES
+        (
+        #{userId},
+        #{userCount},
+        #{userName},
+        #{userEmail},
+        #{userPassword},
+        #{userRegistration},
+        #{isActive},
+        #{rentCount},
+        #{userImage},
+        #{isAdmin}
+        );
+    </insert>
+
+    <select id="selectAllUser" resultMap="infoResultMap">
+        select * from user;
+    </select>
+
+
+    <!--根据id查询用户-->
+    <select id="selectById" resultMap="infoResultMap">
+        SELECT * FROM user WHERE user_id = #{userId};
+    </select>
+
+    <!-- 查询用户账号是否存在且激活 -->
+    <select id="selectCount" resultMap="infoResultMap">
+        SELECT * FROM user WHERE user_count = #{userCount} AND is_active = "1";
+    </select>
+
+    <!-- 查询用户名是否被注册 -->
+    <select id="selectName" resultMap="infoResultMap">
+        SELECT * FROM user WHERE user_name = #{userName};
+    </select>
+
+    <!-- 查询用户邮箱是否被注册 -->
+    <select id="selectEmail" resultMap="infoResultMap">
+        SELECT * FROM user WHERE user_email = #{emailAddress};
+    </select>
+
+    <select id="selectNameById" resultType="String">
+        SELECT user_name FROM user WHERE user_id = #{userId};
+    </select>
+
+    <select id="selectPassword" resultType="String">
+        SELECT user_password FROM user WHERE user_count =#{userCount}
+    </select>
+
+    <update id="activeCount">
+        UPDATE user SET is_active = '1' WHERE user_id =#{userId}
+    </update>
+
+    <select id="checkAdmin" resultMap="infoResultMap">
+        SELECT * FROM user WHERE user_count =#{userCount}
+    </select>
+
+    <select id="auto" resultMap="infoResultMap">
+      SELECT * FROM
+	  user
+      WHERE
+	LOCATE( #{keyword}, user_count) > 0
+    </select>
+
+    <update id="setAdmin">
+        UPDATE user SET
+        is_admin = '1' WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateUser" parameterType="cn.lnj.project.car.data.User">
+        UPDATE user SET
+        <if test="userName!=null and userName !=''">
+            user_name = #{userName}
+        </if>
+        <if test="userCount!=null and userCount !=''">
+            user_count = #{userCount}
+        </if>
+        <if test="userEmail!=null and userEmail !=''">
+            user_email = #{userEmail}
+        </if>
+        <if test="isActive!=null and isActive !=''">
+            is_active = #{isActive}
+        </if>
+        <if test="userImage!=null and userImage !=''">
+            user_image = #{userImage} 
+        </if>
+        <if test="userPassword!=null and userPassword !=''">
+            user_password = #{userPassword} 
+        </if>
+        <if test="rentCount!=null and rentCount!='' ">
+            rent_count =#{rentCount}
+        </if>
+
+		WHERE user_id = #{userId};
+    </update>
+
+    <update id="deleteAdmin">
+        UPDATE user SET
+        is_admin = '0' WHERE user_id = #{userId}
+    </update>
+</mapper>

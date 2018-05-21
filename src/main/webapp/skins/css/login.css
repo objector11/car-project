@@ -1,0 +1,52 @@
+﻿@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-family: 微软雅黑
+}
+
+body {
+	background-color: #fafafa;
+}
+
+.content {
+	margin: 10% auto;
+	padding: 10px;
+	width: 50%;
+	border:1px solid orange;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.login-title {
+	height: 40px;
+	margin: 0 auto;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.need {
+	color:red;
+}
+
+.tr-login {
+	margin-top: 10px;
+}
+
+.loginform input {
+	border-radius: 3px;
+	width: 200px;
+	height: 30px;
+}
+
+.tip-span {
+	display: inline-block;
+	width: 100px;
+}
+
+.login-submit-div {
+	margin-top: 10px;
+	text-align: center;
+}

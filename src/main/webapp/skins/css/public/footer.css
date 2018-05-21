@@ -1,0 +1,25 @@
+@charset "utf-8";
+.footer{
+    clear: both;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    background: #f2f2f2;
+    background-image: url("../../images/footer.jpg");
+}
+
+.footer a:link{
+    color: #c7c17d;
+}
+
+.footer_content {
+    text-align: center;
+}
+
+.footer_content p {
+    margin-top:10px;
+}
+
+.footer_content .count{
+    color: #c74333;
+}

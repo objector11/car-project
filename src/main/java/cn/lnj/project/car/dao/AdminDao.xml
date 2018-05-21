@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lnj.project.car.dao.AdminDao">
+
+    <resultMap id="infoResultMap" type="cn.lnj.project.car.data.Admin"></resultMap>
+
+    <insert id="insert">
+        INSERT INTO
+        admin
+        VALUES (
+        #{id},
+        #{userId},
+        #{shopId}
+        )
+    </insert>
+
+    <select id="selectShopAdmin" resultMap="infoResultMap">
+        SELECT * FROM  admin WHERE  shop_id = #{shopId};
+    </select>
+
+    <select id="selectShopIdByUserId" resultType="String">
+        SELECT shop_id FROM  admin WHERE  user_id = #{userId};
+    </select>
+
+    <delete id="deleteAdmin">
+        DELETE FROM admin WHERE user_id = #{userId};
+    </delete>
+
+</mapper>

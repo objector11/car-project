@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+* {
+    margin: 0;
+    padding:0;
+    font-size: 14px;
+    font-family: 微软雅黑;
+}
+
+.content{
+    margin: 10px 100px;
+    min-height: 420px;
+}
+
+.message {
+    clear: both;
+    float: left;
+}
+
+.message_table {
+    margin: 20px;
+    height: 100px;
+    width: 600px;
+    clear: both;
+}
+
+.message_table input {
+    width: 480px;
+}
+
+.car-info-textArea {
+    width: 480px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.btn-td {
+    text-align: center;
+}
+
+#images {
+    width:540px; min-height:40px;
+}
+
+.images-show {
+    float: right;
+    width: 440px;
+    height: 590px;
+    border: 1px #f3f3f3 solid;
+    border-radius: 5px;
+}
+
+.image-par {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 180px;
+    text-align: center;
+}
+
+.image-par img {
+    width: 200px;
+    height: 160px;
+}

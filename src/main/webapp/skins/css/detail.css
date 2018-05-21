@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+.content{
+    margin: 10px 200px;
+    min-height: 420px;
+}
+
+.shopMessage {
+    width: 400px;
+    float: left;
+}
+
+#allmap {
+    float: right;
+    border: 2px solid #dfdfdf;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom:10px;
+    font-family:"微软雅黑"
+}
+
+.shopInfo {
+    clear: both;
+    padding: 10px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.carInfo {
+    border: 1px solid transparent;
+    padding-bottom: 20px;
+    width: auto;
+}
+
+.carInfo img{
+    width: 270px;
+    height: 170px;
+}
+
+.mouseEnter {
+    border: 1px solid red;
+}
+
+.car-price {
+    color: #F40;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.car-rent-count {
+    float: right;
+    margin-right: 60px;
+    color: #bcb9c7;
+}
+
+#image-around {
+    margin-bottom: 20px;
+    float: left;
+    width: 50%;
+}
+/*设置轮播图的大小*/
+#image-around img{
+    width: auto;
+    height: 300px;
+}
+
+.rent-message {
+    float: right;
+    margin-right: 10px;
+    min-width: 430px;
+}
+
+.confirm {
+    text-align: center;
+}
+.confirm button {
+    margin-right: 5px;
+}

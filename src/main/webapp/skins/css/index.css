@@ -1,0 +1,118 @@
+﻿@charset "utf-8";
+* {
+    margin: 0;
+    padding:0;
+    font-size: 14px;
+    font-family: 微软雅黑;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: orange;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.content {
+    width: 1366px;
+    min-height: 420px;
+
+}
+
+/*轮播图*/
+#image-around {
+    width: 100%;
+}
+#image-around img{
+    width: 100%;
+}
+
+/* 选择框 */
+.select {
+    margin : 20px;
+}
+ /* 三个类别选择框 */
+.brand-select, .type-select, .price-select {
+    padding: 15px;
+    border: 1px solid #ac2925;
+    height: 156px;
+    overflow-y: auto;
+}
+
+.car-brand {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.hideBrand {
+    display: none;
+}
+
+/* 车辆图标 */
+.item-message img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 移除边框重叠 */
+.type-select, .price-select {
+    border-left:none;
+}
+
+/* 更多信息箭头 */
+.more-message {
+    float: right;
+    margin-right: 40px;
+}
+
+/* 选择条目 */
+.item-message {
+    margin-top: 20px;
+}
+
+.carInfo img{
+    width: 270px;
+    height: 170px;
+}
+
+.brand-select>.item-message>a>span {
+    width: auto;
+    overflow-x: hidden;
+}
+
+
+.item-message a {
+    display: inline-block;
+    margin-bottom: 12px;
+    margin-right: 10px;
+}
+
+/* 汽车列表 */
+.carInfo-list {
+    padding: 20px;
+}
+
+/* 将边框设置为透明，避免在鼠标移入时添加边框造成板块移动 */
+.carInfo {
+    border: 1px solid transparent;
+    padding-bottom: 20px;
+}
+
+.mouseEnter {
+    border: 1px solid red;
+}
+
+.car-price {
+    color: #F40;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.car-rent-count {
+    float: right;
+    margin-right: 60px;
+    color: #bcb9c7;
+}

@@ -1,0 +1,182 @@
+﻿@charset "utf-8";
+.content{
+    margin: 10px 200px;
+    min-height: 420px;
+}
+
+.baseInfo-div {
+    min-height: 250px;
+}
+
+.bottomLine {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    border-top:1px solid transparent;
+    border-left:1px solid transparent;
+    border-right:1px solid transparent;
+}
+
+.userImage {
+    float: left;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+}
+
+.userImage img{
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.changeImage {
+    margin: 0 auto;
+}
+
+.baseInfo {
+    float: right;
+    margin-right: 200px;
+}
+
+.edit {
+    float: right;
+    margin-left: 200px;
+    margin-bottom: 10px;
+}
+.save {
+    float: right;
+    margin-left: 200px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.more-info {
+    clear: both;
+    margin-top: 20px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.input-border{
+    border: 1px solid #1653c7;
+}
+
+.upload-car {
+    display: block;
+    clear: both;
+    margin: 10px;
+    width: 80px;
+}
+
+.car-info-list {
+    clear: both;
+    border-top: 1px solid #dfdfdf;
+    padding: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.delete {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.set-admin-div {
+    padding: 10px;
+}
+
+.set-admin-div {
+
+}
+
+.input-admin-div {
+    float: left;
+}
+
+.input-shop-div {
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.input-admin {
+    padding-left: 10px;
+    width: 300px;
+    height: 34px;
+}
+
+.input-shop {
+    padding-left: 10px;
+    width: 300px;
+    height: 34px;
+}
+
+.search-result {
+    display: none;
+    text-align: center;
+}
+
+.shop-message {
+    padding: 10px;
+    border-top:1px solid #dfdfdf;
+}
+
+.add-shop{
+    margin: 10px;
+}
+
+.car-message {
+    padding: 10px;
+    border-top:1px solid #dfdfdf;
+}
+
+.add-car {
+    margin: 10px;
+}
+
+.shop-message p{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.user-count img{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.custom p{
+    margin: 0;
+}
+
+.save-image {
+    display: none;
+}
+
+.admin-list img{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.set-title {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.delete-admin {
+    float: right;
+    margin: -30px 0 10px 0;
+}
+
+.change-password {
+    float: right;
+}
+
+.password-form {
+    display: none;
+}
+

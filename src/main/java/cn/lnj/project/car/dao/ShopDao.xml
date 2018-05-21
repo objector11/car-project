@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lnj.project.car.dao.ShopDao">
+
+    <resultMap id="infoResultMap" type="cn.lnj.project.car.data.Shop"></resultMap>
+
+    <insert id="insert" parameterType="cn.lnj.project.car.data.Shop">
+        INSERT INTO
+        shop
+        VALUES(
+        #{shopId},
+        #{shopName},
+        #{shopPhone},
+        #{shopEmail},
+        #{shopLocation},
+        #{jingDu},
+        #{weidu}
+        )
+    </insert>
+
+    <!--获取所有车辆信息-->
+    <select id="all" resultMap="infoResultMap">
+        SELECT * FROM shop
+        <where>
+            <if test="shopName != null and shopName != ''">
+                shop_name = #{shopName}
+            </if>
+        </where>
+        <if test="limit!=null and limit !=''">
+            limit #{limit};
+        </if>
+    </select>
+
+    <select id="selectById" resultMap="infoResultMap">
+        SELECT * FROM shop WHERE shop_id = #{shopId};
+    </select>
+
+    <delete id="deleteById">
+        DELETE FROM shop WHERE shop_id = #{shopId};
+    </delete>
+
+    <select id="auto" resultMap="infoResultMap">
+        SELECT * FROM shop
+        WHERE
+        LOCATE(#{param}, shop_name)>0
+
+    </select>
+
+    <select id="selectByName" resultMap="infoResultMap">
+        SELECT * FROM shop
+        WHERE
+        shop_name = #{name}
+    </select>
+
+    <select id="checkShop" resultMap="infoResultMap">
+        SELECT * FROM shop
+        WHERE
+        <if test="shopName !=null and shopName !=''">
+            shop_name = #{shopName};
+        </if>
+        <if test="shopPhone !=null and shopPhone !=''">
+            shop_phone = #{shopPhone};
+        </if>
+        <if test="shopEmail !=null and shopEmail !=''">
+            shop_email = #{shopEmail};
+        </if>
+        <if test="shopLocation !=null and shopLocation !=''">
+            shop_location = #{shopLocation};
+        </if>
+    </select>
+
+    <update id="updateShop" parameterType="cn.lnj.project.car.data.Shop">
+        UPDATE shop SET
+        <if test="shopName!=null and shopName !=''">
+            shop_name = #{shopName},
+        </if>
+        <if test="shopPhone!=null and shopPhone !=''">
+            shop_phone = #{shopPhone},
+        </if>
+        <if test="shopEmail!=null and shopEmail !=''">
+            shop_email = #{shopEmail},
+        </if>
+        <if test="shopLocation!=null and shopLocation !=''">
+            shop_location = #{shopLocation},
+        </if>
+        <if test="jingDu!=null and jingDu !=''">
+            jingdu = #{jingDu},
+        </if>
+        <if test="weidu!=null and weidu !=''">
+            weidu = #{weidu}
+        </if>
+        WHERE shop_id = #{shopId}
+    </update>
+
+</mapper>
