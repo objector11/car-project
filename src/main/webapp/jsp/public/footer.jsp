@@ -23,14 +23,14 @@
         <div class="footer_content">
             <p>已有&nbsp;<span class="count"><%=count %></span>&nbsp;人次访问 </p>
             <p>
-                Designed and developed &copy; by <a href="mailto:ytulnj@163.com">LiuNaiJie</a>
+                Designed and developed &copy; by <a href="mailto:liunaijie1996@163.com">LiuNaiJie</a>
                 &nbsp;&nbsp;All Rights Reserved
             </p>
             <p>
                 毕业项目，感谢每一位帮助过我的老师和同学。
             </p>
             <p>
-                所以图片均为网络资源，如果涉及侵权，请联系<a href="mailto:ytulnj@163.com">ytulnj@163.com</a>
+                所以图片均为网络资源，如果涉及侵权，请联系<a href="mailto:liunaijie1996@163.com">liunaijie1996@163.com</a>
             </p>
         </div>
     </div>

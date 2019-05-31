@@ -217,7 +217,7 @@
         {{/each}}
     </div>
 </script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=************"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=3ZTqve5P7oquBgZkG9kpcYKQGtQ1oyhZ"></script>
 </body>
 <script type="text/javascript">
     var context = "<%=request.getContextPath()%>";
